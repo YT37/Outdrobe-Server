@@ -1,0 +1,6 @@
+flask
+gunicorn
+torch --index-url https://download.pytorch.org/whl/cu118
+transformers
+Pillow
+accelerate
