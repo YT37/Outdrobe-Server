@@ -18,13 +18,15 @@ os.environ["TRANSFORMERS_CACHE"] = "/tmp/transformers_cache"
 # We use a try-except block to log any errors during the long model loading process
 try:
     print("Loading Blip2Processor...")
-    processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
+    processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-350m")
+
     print("Loading Blip2ForConditionalGeneration model...")
     model = Blip2ForConditionalGeneration.from_pretrained(
-        "Salesforce/blip2-opt-2.7b",
+        "Salesforce/blip2-opt-350m",
         torch_dtype=torch.float16,
         device_map="auto",
     )
+
     print("Model loading complete.")
 except Exception as e:
     print(f"Error loading model: {e}")
